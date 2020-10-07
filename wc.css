@@ -3,7 +3,7 @@ This will stylize the welcome captain landing page
 */
 
 body {
-    background-image: url("images/stars.jpg");
+    background-image: url("./images/space.jpg");
 }
 
 header {
