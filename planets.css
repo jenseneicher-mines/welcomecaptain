@@ -1,0 +1,14 @@
+body {
+	background-color: black;
+	background-image: url("./images/space.jpg");
+}
+
+#space {
+	background-color: black;
+	background-image: url("./images/space.jpg");
+	border: 5px solid black;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+}
