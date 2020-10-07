@@ -16,9 +16,17 @@ This will be the welcome captain landing page
     <h1 id="welcome">Welcome, Captain!</h1>
 </header>
 
-<input type="button" id="choose" value="Pick your Ship">
+<input type="button" id="choose" value="Pick your Ship" onclick="editShip()">
 
-<input type="button" id="start" value="Start Game">
+<input type="button" id="start" value="Start Game" onclick="startGame()">
 
+<script>
+    function startGame() {
+        window.open("planets.html","_self");
+    }
+    function editShip() {
+        window.open("ship.html","_self");
+    }
+</script>
 </body>
 </html>
