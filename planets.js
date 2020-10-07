@@ -9,6 +9,7 @@ var jup = canvas.getContext("2d");
 var sat = canvas.getContext("2d");
 var ura = canvas.getContext("2d");
 var nep = canvas.getContext("2d");
+var sun = canvas.getContext("2d");
 var shipImg = new Image();
 var merImg = new Image();
 var venImg = new Image();
@@ -18,19 +19,21 @@ var jupImg = new Image();
 var satImg = new Image();
 var uraImg = new Image();
 var nepImg = new Image();
-var xPos = 20;
-var yPos = 20;
+var sunImg = new Image();
+var xPos = 60;
+var yPos = 60;
 
 // Source of the image to be used
 shipImg.src = "./images/ufo.jpg";
-merImg.src = "./images/mercury.jpg";
-venImg.src = "./images/venus.jpg";
-earImg.src = "./images/earth.jpg";
-marImg.src = "./images/mars.jpg";
-jupImg.src = "./images/jupiter.jpg";
-satImg.src = "./images/saturn.jpg";
-uraImg.src = "./images/uranus.jpg";
-nepImg.src = "./images/neptune.jpg";
+merImg.src = "./images/mercury_sm.jpg";
+venImg.src = "./images/venus_sm.jpg";
+earImg.src = "./images/earth_sm.jpg";
+marImg.src = "./images/mars_sm.jpg";
+jupImg.src = "./images/jupiter_sm.jpg";
+satImg.src = "./images/saturn_sm.jpg";
+uraImg.src = "./images/uranus_sm.jpg";
+nepImg.src = "./images/neptune_sm.jpg";
+sunImg.src = "./images/sun.jpg";
 
 // Event to listen for keyboard activity
 document.addEventListener("keydown", checkKeyPressed, false);
@@ -67,21 +70,22 @@ function checkKeyPressed(e) {
       }
 	  break;
   }
-  drawShip();
+  drawPlanets();
 }
 
 
 // Function to draw planets on page load
 // Images need to be scaled down and positioned appropriately
 function drawPlanets() {
-  mer.drawImage(merImg, 200, 200);
-  ven.drawImage(venImg, 100, 100);
-  ear.drawImage(earImg, 50, 50);
-  mar.drawImage(marImg, 20, 20);
-  jup.drawImage(jupImg, 300, 300);
-  sat.drawImage(satImg, 400, 400);
-  ura.drawImage(uraImg, 60, 60);
-  nep.drawImage(nepImg, 250, 250);
+  mer.drawImage(merImg, (canvas.width/2) + merImg.width - 110, (canvas.height/2) - (sunImg.height/2) - merImg.height);
+  ven.drawImage(venImg, (canvas.width/2) - (sunImg.width/2) - venImg.width, (canvas.height/2) + (venImg.height/2));
+  ear.drawImage(earImg, (canvas.width/2) + earImg.width, (canvas.height/2) + (earImg.height/2));
+  mar.drawImage(marImg, (canvas.width/2) - marImg.width - 150, 20);
+  jup.drawImage(jupImg, 0,  canvas.height - jupImg.height);
+  sat.drawImage(satImg, canvas.width - satImg.width, 0);
+  ura.drawImage(uraImg, 0, 0);
+  nep.drawImage(nepImg, canvas.width - nepImg.width, canvas.height - nepImg.height);
+  sun.drawImage(sunImg, (canvas.width/2) - (sunImg.width/2), (canvas.height/2) - (sunImg.height/2));
   drawShip();
 }
 
