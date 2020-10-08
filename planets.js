@@ -13,6 +13,7 @@ var nep = new Image();
 var sun = new Image();
 var xPos = 60;
 var yPos = 60;
+var loc = "";
 
 // Source of the image to be used
 ship.src = "./images/ufo.jpg";
@@ -26,12 +27,74 @@ ura.src = "./images/uranus_sm.jpg";
 nep.src = "./images/neptune_sm.jpg";
 sun.src = "./images/sun.jpg";
 
+// Text displayed in canvas
 plan.font = "30px Arial";
 plan.fillStyle = "yellow";
 
-// Event to listen for keyboard activity
+// Event to listen for mouse activity
 document.addEventListener("mousemove", shipMove, false);
 
+// Event to listen for enter key
+document.addEventListener("keydown", gotoPlanet, false);
+
+document.addEventListener("click", testLoc, false);
+
+function testLoc(event) {
+  var x = new Number();
+  var y = new Number();
+  var loc = false;
+
+  if (event.x != undefined && event.y != undefined) {
+    x = event.x;
+    y = event.y;
+  // Firefox method
+  } else {
+    x = event.clientX + document.body.scrollLeft +
+    document.documentElement.scrollLeft;
+    y = event.clientY + document.body.scrollTop +
+    document.documentElement.scrollTop;
+  }
+  
+  x -= canvas.offsetLeft;
+  y -= canvas.offsetTop;
+  alert(x + ", " + y);
+}
+
+// Function to go to planet
+function gotoPlanet(e) {
+  if (e.keyCode == 13) {
+	switch (loc) {
+	  case "mer":
+		alert("You're going to Mercury!");
+		break;
+	  case "ven":
+	    alert("You're going to Venus!");
+		break;
+	  case "ear":
+	    alert("You're going to Earth!");
+		break;
+	  case "mar":
+	    alert("You're going to Mars!");
+		break;
+	  case "jup":
+	    alert("You're going to Jupiter!");
+		break;
+	  case "sat":
+	    alert("You're going to Saturn!");
+		break;
+	  case "ura":
+	    alert("You're going to Uranus!");
+		break;
+	  case "nep":
+	    alert("You're going to Neptune!");
+		break;
+	  case "":
+	    break;
+	}
+  }
+}
+
+// Function to move ship with mouse and call drawPlanets()
 function shipMove(event) {
   var x = new Number();
   var y = new Number();
@@ -58,11 +121,11 @@ function shipMove(event) {
   drawPlanets(x,y);
 }
 
-// Function to draw planets on page load
+// Function to draw planets and detect planet hover
 function drawPlanets(x,y) {
   merX = (canvas.width/2) + mer.width - 110;
   merY = (canvas.height/2) - (sun.height/2) - mer.height;
-  venX =  (canvas.width/2) - (sun.width/2) - ven.width;
+  venX = (canvas.width/2) - (sun.width/2) - ven.width;
   venY = (canvas.height/2) + (ven.height/2);
   earX = (canvas.width/2) + ear.width;
   earY = (canvas.height/2) + (ear.height/2);
@@ -89,45 +152,40 @@ function drawPlanets(x,y) {
   
   var fX = canvas.width/2 - 150;
   var fY = 30;
-  if (x > merX && x < merX + mer.width) {
-	if (y > merY && y < merY + mer.height) {
-	  plan.fillText("Press Enter to land on Mercury!", fX, fY);
-	}
+  if (x > merX && x < merX + mer.width && y > merY && y < merY + mer.height) {
+	plan.fillText("Press Enter to land on Mercury!", fX, fY);
+	loc = "mer";
   }
-  if (x > venX && x < venX + ven.width) {
-	if (y > venY && y < venY + ven.height) {
-	  plan.fillText("Press Enter to land on Venus!", fX, fY);
-	}
+  else if (x > venX && x < venX + ven.width && y > venY && y < venY + ven.height) {
+	plan.fillText("Press Enter to land on Venus!", fX, fY);
+	loc = "ven";
   }
-  if (x > earX && x < earX + ear.width) {
-	if (y > earY && y < earY + ear.height) {
-	  plan.fillText("Press Enter to land on Earth!", fX, fY);
-	}
+  else if (x > earX && x < earX + ear.width && y > earY && y < earY + ear.height) {
+	plan.fillText("Press Enter to land on Earth!", fX, fY);
+	loc = "ear";
   }
-  if (x > marX && x < marX + mar.width) {
-	if (y > marY && y < marY + mar.height) {
+  else if (x > marX && x < marX + mar.width && y > marY && y < marY + mar.height) {
 	  plan.fillText("Press Enter to land on Mars!", fX, fY);
-	}
+	  loc = "mar";
   }
-  if (x > jupX && x < jupX + jup.width) {
-	if (y > jupY && y < jupY + jup.height) {
-	  plan.fillText("Press Enter to land on Jupiter!", fX, fY);
-	}
+  else if (x > jupX && x < jupX + jup.width && y > jupY && y < jupY + jup.height) {
+	plan.fillText("Press Enter to land on Jupiter!", fX, fY);
+	loc = "jup";
   }
-  if (x > satX && x < satX + sat.width) {
-	if (y > satY && y < satY + sat.height) {
-	  plan.fillText("Press Enter to land on Saturn!", fX, fY);
-	}
+  else if (x > satX && x < satX + sat.width && y > satY && y < satY + sat.height) {
+	plan.fillText("Press Enter to land on Saturn!", fX, fY);
+	loc = "sat";
   }
-  if (x > uraX && x < uraX + ura.width) {
-	if (y > uraY && y < uraY + ura.height) {
-	  plan.fillText("Press Enter to land on Uranus!", fX, fY);
-	}
+  else if (x > uraX && x < uraX + ura.width && y > uraY && y < uraY + ura.height) {
+	plan.fillText("Press Enter to land on Uranus!", fX, fY);
+	loc = "ura";
   }
-  if (x > nepX && x < nepX + nep.width) {
-	if (y > nepY && y < nepY + nep.height) {
-	  plan.fillText("Press Enter to land on Neptune!", fX, fY);
-	}
+  else if (x > nepX && x < nepX + nep.width && y > nepY && y < nepY + nep.height) {
+	plan.fillText("Press Enter to land on Neptune!", fX, fY);
+	loc = "nep";
+  }
+  else {
+	loc = "";
   }
 }
 
