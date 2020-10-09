@@ -14,6 +14,8 @@ var sun = new Image();
 var xPos = 60;
 var yPos = 60;
 var loc = "";
+var aX = canvas.width - 150;
+var aY = 50;
 
 // Source of the image to be used
 ship.src = "./images/ufo.jpg";
@@ -37,28 +39,7 @@ document.addEventListener("mousemove", shipMove, false);
 // Event to listen for enter key
 document.addEventListener("keydown", gotoPlanet, false);
 
-document.addEventListener("click", testLoc, false);
-
-function testLoc(event) {
-  var x = new Number();
-  var y = new Number();
-  var loc = false;
-
-  if (event.x != undefined && event.y != undefined) {
-    x = event.x;
-    y = event.y;
-  // Firefox method
-  } else {
-    x = event.clientX + document.body.scrollLeft +
-    document.documentElement.scrollLeft;
-    y = event.clientY + document.body.scrollTop +
-    document.documentElement.scrollTop;
-  }
-  
-  x -= canvas.offsetLeft;
-  y -= canvas.offsetTop;
-  alert(x + ", " + y);
-}
+var intervalID = window.setInterval(drawAsteroid, 20, true);
 
 // Function to go to planet
 function gotoPlanet(e) {
@@ -149,38 +130,48 @@ function drawPlanets(x,y) {
   plan.drawImage(nep, nepX, nepY);
   plan.drawImage(sun, (canvas.width/2) - (sun.width/2), (canvas.height/2) - (sun.height/2));
   drawShip();
+  drawAsteroid(false);
   
+  // Find out if mouse is hovering over a planet
   var fX = canvas.width/2 - 150;
   var fY = 30;
   if (x > merX && x < merX + mer.width && y > merY && y < merY + mer.height) {
+	plan.fillStyle = "yellow";
 	plan.fillText("Press Enter to land on Mercury!", fX, fY);
 	loc = "mer";
   }
   else if (x > venX && x < venX + ven.width && y > venY && y < venY + ven.height) {
+	plan.fillStyle = "yellow";
 	plan.fillText("Press Enter to land on Venus!", fX, fY);
 	loc = "ven";
   }
   else if (x > earX && x < earX + ear.width && y > earY && y < earY + ear.height) {
+	plan.fillStyle = "yellow";
 	plan.fillText("Press Enter to land on Earth!", fX, fY);
 	loc = "ear";
   }
   else if (x > marX && x < marX + mar.width && y > marY && y < marY + mar.height) {
-	  plan.fillText("Press Enter to land on Mars!", fX, fY);
-	  loc = "mar";
+	plan.fillStyle = "yellow";
+	plan.fillText("Press Enter to land on Mars!", fX, fY);
+	loc = "mar";
   }
   else if (x > jupX && x < jupX + jup.width && y > jupY && y < jupY + jup.height) {
+	plan.fillStyle = "yellow";
 	plan.fillText("Press Enter to land on Jupiter!", fX, fY);
 	loc = "jup";
   }
   else if (x > satX && x < satX + sat.width && y > satY && y < satY + sat.height) {
+	plan.fillStyle = "yellow";
 	plan.fillText("Press Enter to land on Saturn!", fX, fY);
 	loc = "sat";
   }
   else if (x > uraX && x < uraX + ura.width && y > uraY && y < uraY + ura.height) {
+	plan.fillStyle = "yellow";
 	plan.fillText("Press Enter to land on Uranus!", fX, fY);
 	loc = "ura";
   }
   else if (x > nepX && x < nepX + nep.width && y > nepY && y < nepY + nep.height) {
+	plan.fillStyle = "yellow";
 	plan.fillText("Press Enter to land on Neptune!", fX, fY);
 	loc = "nep";
   }
@@ -192,4 +183,45 @@ function drawPlanets(x,y) {
 // Function to draw the ship
 function drawShip() {
   plan.drawImage(ship, xPos, yPos);
+}
+
+// Draw asteroid
+function drawAsteroid(increment) {
+  if (aX < -150) {
+	aX = canvas.width;
+	aY = Math.floor(Math.random() * (canvas.height - 1));
+  }
+  var aRad = 10;
+  plan.beginPath();
+  plan.moveTo(aX, aY - aRad);
+  plan.lineTo(aX, aY + aRad);
+  plan.lineTo(aX + 100, aY + aRad);
+  plan.closePath();
+  plan.fillStyle = 'red';
+  plan.fill();
+  plan.stroke();
+  plan.beginPath();
+  plan.moveTo(aX, aY - aRad);
+  plan.lineTo(aX, aY + aRad);
+  plan.lineTo(aX + 100, aY - aRad);
+  plan.closePath();
+  plan.fillStyle = 'red';
+  plan.fill();
+  plan.stroke();
+  plan.beginPath();
+  plan.moveTo(aX, aY - aRad);
+  plan.lineTo(aX, aY + aRad);
+  plan.lineTo(aX + 150, aY);
+  plan.closePath();
+  plan.fillStyle = 'orange';
+  plan.fill();
+  plan.stroke();
+  plan.beginPath();
+  plan.arc(aX, aY, aRad, 0, 2 * Math.PI);
+  plan.fillStyle = 'gray';
+  plan.fill();
+  plan.stroke();
+  if (increment == true) {
+    aX -= 3;
+  }
 }
