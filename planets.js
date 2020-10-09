@@ -16,6 +16,8 @@ var yPos = 60;
 var loc = "";
 var aX = canvas.width - 150;
 var aY = 50;
+var x = new Number();
+var y = new Number();
 
 // Source of the image to be used
 ship.src = "./images/ufo.jpg";
@@ -39,6 +41,7 @@ document.addEventListener("mousemove", shipMove, false);
 // Event to listen for enter key
 document.addEventListener("keydown", gotoPlanet, false);
 
+// Timer to draw asteroid
 var intervalID = window.setInterval(drawAsteroid, 20, true);
 
 // Function to go to planet
@@ -77,8 +80,8 @@ function gotoPlanet(e) {
 
 // Function to move ship with mouse and call drawPlanets()
 function shipMove(event) {
-  var x = new Number();
-  var y = new Number();
+  //var x = new Number();
+  //var y = new Number();
   var loc = false;
 
   if (event.x != undefined && event.y != undefined) {
@@ -99,11 +102,11 @@ function shipMove(event) {
   yPos = y - (ship.height/2);
   
   plan.clearRect(0, 0, canvas.width, canvas.height);
-  drawPlanets(x,y);
+  drawPlanets(x,y, true);
 }
 
 // Function to draw planets and detect planet hover
-function drawPlanets(x,y) {
+function drawPlanets(x, y, check) {
   merX = (canvas.width/2) + mer.width - 110;
   merY = (canvas.height/2) - (sun.height/2) - mer.height;
   venX = (canvas.width/2) - (sun.width/2) - ven.width;
@@ -130,7 +133,9 @@ function drawPlanets(x,y) {
   plan.drawImage(nep, nepX, nepY);
   plan.drawImage(sun, (canvas.width/2) - (sun.width/2), (canvas.height/2) - (sun.height/2));
   drawShip();
-  drawAsteroid(false);
+  if (check == true) {
+    drawAsteroid(false);
+  }
   
   // Find out if mouse is hovering over a planet
   var fX = canvas.width/2 - 150;
@@ -187,11 +192,15 @@ function drawShip() {
 
 // Draw asteroid
 function drawAsteroid(increment) {
-  if (aX < -150) {
+  if (aX < -150 && increment == true) {
 	aX = canvas.width;
 	aY = Math.floor(Math.random() * (canvas.height - 1));
   }
   var aRad = 10;
+  if (increment == true) {
+	plan.clearRect(0, 0, canvas.width, canvas.height);
+	drawPlanets( x, y, false);
+  }
   plan.beginPath();
   plan.moveTo(aX, aY - aRad);
   plan.lineTo(aX, aY + aRad);
