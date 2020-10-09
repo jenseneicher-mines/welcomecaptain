@@ -1,0 +1,30 @@
+<!---
+This will be the gameover landing page
+--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Captain!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="gameover.css" />
+	<script src="./planets.js"></script>
+</head>
+<body>
+
+<header>
+    <h1 id="welcome">Oh no, an asteroid hit you!</h1>
+	<p id="final"></p>
+</header>
+
+<input type="button" id="choose" value="Go Back and Complete Journey" onclick="goBack()">
+
+<script src="./gameover.js"></script>
+<!--<script>
+    function goBack() {
+        window.open("planets.html","_self");
+    }
+	document.getElementById("final").innerText = "Your final score was /32, you didn't collect the data on all the planets.";
+</script>-->
+</body>
+</html>

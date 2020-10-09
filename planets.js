@@ -1,4 +1,5 @@
 // Declare variables
+var score = 0;
 var canvas = document.getElementById("space");
 var plan = canvas.getContext("2d");
 var ship = new Image();
@@ -84,8 +85,6 @@ function gotoPlanet(e) {
 
 // Function to move ship with mouse and call drawPlanets()
 function shipMove(event) {
-  //var x = new Number();
-  //var y = new Number();
   var loc = false;
 
   if (event.x != undefined && event.y != undefined) {
@@ -238,6 +237,6 @@ function drawAsteroid(increment) {
     aX -= 3;
   }
   if (aX > x - (ship.width/2) && aX < x + (ship.width/2) && aY > y - (ship.height/2) && aY < y + (ship.height/2)) {
-	alert("game over");
+	window.open("gameover.html","_self");
   }
 }
