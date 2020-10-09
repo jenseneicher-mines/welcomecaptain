@@ -18,6 +18,7 @@ var aX = canvas.width - 150;
 var aY = 50;
 var x = new Number();
 var y = new Number();
+var score = 0;
 
 // Source of the image to be used
 ship.src = "./images/ufo.jpg";
@@ -34,6 +35,9 @@ sun.src = "./images/sun.jpg";
 // Text displayed in canvas
 plan.font = "30px Arial";
 plan.fillStyle = "yellow";
+
+// Display score
+document.getElementById("score").innerText = "Score: " + score + "/32";
 
 // Event to listen for mouse activity
 document.addEventListener("mousemove", shipMove, false);
@@ -139,7 +143,7 @@ function drawPlanets(x, y, check) {
   
   // Find out if mouse is hovering over a planet
   var fX = canvas.width/2 - 150;
-  var fY = 30;
+  var fY = canvas.height - 20;
   if (x > merX && x < merX + mer.width && y > merY && y < merY + mer.height) {
 	plan.fillStyle = "yellow";
 	plan.fillText("Press Enter to land on Mercury!", fX, fY);
@@ -232,5 +236,8 @@ function drawAsteroid(increment) {
   plan.stroke();
   if (increment == true) {
     aX -= 3;
+  }
+  if (aX > x - (ship.width/2) && aX < x + (ship.width/2) && aY > y - (ship.height/2) && aY < y + (ship.height/2)) {
+	alert("game over");
   }
 }

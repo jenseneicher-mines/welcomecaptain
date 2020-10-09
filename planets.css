@@ -13,3 +13,21 @@ body {
 	margin-right: auto;
 	margin-top: 40px;
 }
+
+h1 {
+    color: yellow;
+	margin: 0;
+	padding-bottom: 0;
+	float: left;
+	font-size: 30px;
+}
+
+p { 
+    color: yellow;
+	margin: 0;
+	padding-bottom: 0;
+	padding-right: 10px;
+	float: right;
+	font-size: 30px;
+	font-weight: bold;
+}
