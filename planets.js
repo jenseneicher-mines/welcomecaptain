@@ -22,7 +22,7 @@ var y = new Number();
 var score = 0;
 
 // Source of the image to be used
-ship.src = "./images/ufo.jpg";
+ship.src = "./images/shuttle.png";
 mer.src = "./images/mercury_sm.jpg";
 ven.src = "./images/venus_sm.jpg";
 ear.src = "./images/earth_sm.jpg";
