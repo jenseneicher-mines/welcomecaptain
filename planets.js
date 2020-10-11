@@ -73,28 +73,36 @@ function gotoPlanet(e) {
   if (e.keyCode == 13) {
 	switch (loc) {
 	  case "mer":
-		alert("You're going to Mercury!");
+	    localStorage.setItem("planet","mer");
+		window.open("explore.html","_self");
 		break;
 	  case "ven":
-	    alert("You're going to Venus!");
+	    localStorage.setItem("planet","ven");
+		window.open("explore.html","_self");
 		break;
 	  case "ear":
-	    alert("You're going to Earth!");
+	    localStorage.setItem("planet","ear");
+		window.open("explore.html","_self");
 		break;
 	  case "mar":
-	    alert("You're going to Mars!");
+	    localStorage.setItem("planet","mar");
+		window.open("explore.html","_self");
 		break;
 	  case "jup":
-	    alert("You're going to Jupiter!");
+	    localStorage.setItem("planet","jup");
+		window.open("explore.html","_self");
 		break;
 	  case "sat":
-	    alert("You're going to Saturn!");
+	    localStorage.setItem("planet","sat");
+		window.open("explore.html","_self");
 		break;
 	  case "ura":
-	    alert("You're going to Uranus!");
+	    localStorage.setItem("planet","ura");
+		window.open("explore.html","_self");
 		break;
 	  case "nep":
-	    alert("You're going to Neptune!");
+	    localStorage.setItem("planet","nep");
+		window.open("explore.html","_self");
 		break;
 	  case "":
 	    break;

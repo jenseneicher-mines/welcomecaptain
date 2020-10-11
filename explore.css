@@ -1,0 +1,22 @@
+body {
+	background-color: black;
+	background-image: url("./images/space.jpg");
+}
+
+h1 {
+    color: yellow;
+	margin: 0;
+	padding-bottom: 0;
+	float: left;
+	font-size: 30px;
+}
+
+p { 
+    color: yellow;
+	margin: 0;
+	padding-bottom: 0;
+	padding-right: 10px;
+	float: right;
+	font-size: 30px;
+	font-weight: bold;
+}
