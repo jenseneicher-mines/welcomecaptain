@@ -1,5 +1,3 @@
-localStorage.setItem("score",0);
-
 function planets() {
         window.open("planets.html","_self");
 }

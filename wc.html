@@ -21,6 +21,8 @@ This will be the welcome captain landing page
 <input type="button" id="start" value="Start Game" onclick="startGame()">
 
 <script>
+	localStorage.setItem("score",0);
+    localStorage.setItem("shipSel","rocket");
     function startGame() {
         window.open("planets.html","_self");
     }
