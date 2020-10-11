@@ -1,3 +1,4 @@
+// Grab shared variables across pages from localStorage
 const shipSel = localStorage.getItem("shipSel");
 const score = localStorage.getItem("score");
 const planet = localStorage.getItem("planet");

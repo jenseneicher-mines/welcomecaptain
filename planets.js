@@ -18,10 +18,11 @@ var aX = canvas.width - 150;
 var aY = 50;
 var x = new Number();
 var y = new Number();
+// Get shared variables across pages from localStorage
 const shipSel = localStorage.getItem("shipSel");
 const score = localStorage.getItem("score");
 
-// Source of the image to be used
+// Choose ship image based on shipSel
 switch(shipSel) {
   case "rocket":
 	ship.src = "./images/rocket.png";
@@ -42,6 +43,7 @@ switch(shipSel) {
 	ship.src = "./images/starship.png";
 	break;
 }
+// Define images for planets
 mer.src = "./images/mercury_sm.jpg";
 ven.src = "./images/venus_sm.jpg";
 ear.src = "./images/earth_sm.jpg";
@@ -68,7 +70,7 @@ document.addEventListener("keydown", gotoPlanet, false);
 // Timer to draw asteroid
 var intervalID = window.setInterval(drawAsteroid, 20, true);
 
-// Function to go to planet
+// Function to go to planets when user hits enter key
 function gotoPlanet(e) {
   if (e.keyCode == 13) {
 	switch (loc) {
@@ -136,6 +138,7 @@ function shipMove(event) {
 }
 
 // Function to draw planets and detect planet hover
+// check parameter keeps drawPlanets and drawAsteroid from calling each other infinitely
 function drawPlanets(x, y, check) {
   merX = (canvas.width/2) + mer.width - 110;
   merY = (canvas.height/2) - (sun.height/2) - mer.height;
