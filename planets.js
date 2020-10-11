@@ -1,5 +1,4 @@
 // Declare variables
-var score = 0;
 var canvas = document.getElementById("space");
 var plan = canvas.getContext("2d");
 var ship = new Image();
@@ -19,10 +18,30 @@ var aX = canvas.width - 150;
 var aY = 50;
 var x = new Number();
 var y = new Number();
-var score = 0;
+const shipSel = localStorage.getItem("shipSel");
+const score = localStorage.getItem("score");
 
 // Source of the image to be used
-ship.src = "./images/fighter.png";
+switch(shipSel) {
+  case "rocket":
+	ship.src = "./images/rocket.png";
+	break;
+  case "shuttle":
+	ship.src = "./images/shuttle.png";
+	break;
+  case "pirate":
+	ship.src = "./images/pirate.png";
+	break;
+  case "fighter":
+	ship.src = "./images/fighter.png";
+	break;
+  case "ufo":
+	ship.src = "./images/ufo.png";
+	break;
+  case "starship":
+	ship.src = "./images/starship.png";
+	break;
+}
 mer.src = "./images/mercury_sm.jpg";
 ven.src = "./images/venus_sm.jpg";
 ear.src = "./images/earth_sm.jpg";

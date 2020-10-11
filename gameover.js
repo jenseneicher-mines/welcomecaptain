@@ -1,3 +1,5 @@
+const score = localStorage.getItem("score");
+
 function goBack() {
         window.open("planets.html","_self");
     }
