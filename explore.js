@@ -52,8 +52,8 @@ img4.src = "./images/tape.png";
 console.log(img4);
 img4.height = 100;
 img4.width = 100;
-img4.style.left = '15%';
-img4.style.top = '50%';
+img4.style.left = '10%';
+img4.style.top = '45%';
 img4.style.position = 'absolute';
 document.body.appendChild(img4);
 
@@ -65,8 +65,6 @@ text.style.backgroundColor = "lightgrey";
 text.style.borderRadius = "25px";
 text.style.paddingLeft = "25px";
 text.style.paddingRight = "25px";
-
-
 
 
 $('#I1').click(function() {

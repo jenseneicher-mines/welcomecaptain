@@ -103,7 +103,7 @@ function gotoPlanet(e) {
 		break;
 	  case "mar":
 	    localStorage.setItem("planet","mar");
-	    localStorage.setItem("planetsrc","./images/mars_sm.jpg");
+	    localStorage.setItem("planetsrc","./images/mars_surface.jpg");
         localStorage.setItem("fact1","Interesting Fact, Mars has the tallest mountain known in the solar system at 68,897 ft high");
         localStorage.setItem("fact2","Average Temperature, -20 deg F");
         localStorage.setItem("fact3","Year length (Earth Days to travel around the sun), 687 earth");
@@ -121,7 +121,7 @@ function gotoPlanet(e) {
 		break;
 	  case "sat":
 	    localStorage.setItem("planet","sat");
-	    localStorage.setItem("planetsrc","./images/saturn_sm.jpg");
+	    localStorage.setItem("planetsrc","./images/saturn_surface.png");
         localStorage.setItem("fact1","Interesting Fact, Saturn has the fastest winds of any other planet in the solar system at 1,100 miles per hour");
         localStorage.setItem("fact2","Average Temperature, -218 deg F");
         localStorage.setItem("fact3","Year length (Earth Days to travel around the sun), 10,759 earth days");
@@ -130,7 +130,7 @@ function gotoPlanet(e) {
 		break;
 	  case "ura":
 	    localStorage.setItem("planet","ura");
-	    localStorage.setItem("planetsrc","./images/uranus_sm.jpg");
+	    localStorage.setItem("planetsrc","./images/uranus_surface.jpg");
 	    localStorage.setItem("fact1","Interesting Fact, Uranus has 13 known rings, though these rings are quite narrow so they are less visible than Saturn's ring");
         localStorage.setItem("fact2","Average Temperature, -320 deg F");
         localStorage.setItem("fact3","Year length (Earth Days to travel around the sun), 30,687 earth days");
@@ -139,7 +139,7 @@ function gotoPlanet(e) {
 		break;
 	  case "nep":
 	    localStorage.setItem("planet","nep");
-	    localStorage.setItem("planetsrc","./images/neptune_sm.jpg");
+	    localStorage.setItem("planetsrc","./images/neptune_surface.jpg");
 	    localStorage.setItem("fact1","Interesting Fact, Only one spacecraft has flown past Neptune, Voyager 2 in 1989");
 	    localStorage.setItem("fact2","Average Temperature, -331 deg F");
         localStorage.setItem("fact3","Year length (Earth Days to travel around the sun), 60,190 earth days");
