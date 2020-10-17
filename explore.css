@@ -1,6 +1,9 @@
 body {
 	background-color: black;
-	background-image: url("./images/space.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 90%;
 }
 
 h1 {
@@ -19,4 +22,18 @@ p {
 	float: right;
 	font-size: 30px;
 	font-weight: bold;
+}
+
+img:hover{
+	opacity:1.0;
+	filter:alpha(opacity=40);
+	-webkit-opacity:1.0;
+	-moz-opacity:1.0;
+}
+
+img {
+	opacity:0.4;
+	filter:alpha(opacity=40);
+	-webkit-opacity:0.4;
+	-moz-opacity:0.4;
 }

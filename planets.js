@@ -76,34 +76,42 @@ function gotoPlanet(e) {
 	switch (loc) {
 	  case "mer":
 	    localStorage.setItem("planet","mer");
+	    localStorage.setItem("planetsrc","./images/mercury_surface.jpg");
 		window.open("explore.html","_self");
 		break;
 	  case "ven":
 	    localStorage.setItem("planet","ven");
+	    localStorage.setItem("planetsrc","./images/surface_venus.jpg");
 		window.open("explore.html","_self");
 		break;
 	  case "ear":
 	    localStorage.setItem("planet","ear");
+	    localStorage.setItem("planetsrc","./images/earth_surface.jpg");
 		window.open("explore.html","_self");
 		break;
 	  case "mar":
 	    localStorage.setItem("planet","mar");
+	    localStorage.setItem("planetsrc","./images/mars_sm.jpg");
 		window.open("explore.html","_self");
 		break;
 	  case "jup":
 	    localStorage.setItem("planet","jup");
+	    localStorage.setItem("planetsrc","./images/jupiter_surface.jpg");
 		window.open("explore.html","_self");
 		break;
 	  case "sat":
 	    localStorage.setItem("planet","sat");
+	    localStorage.setItem("planetsrc","./images/saturn_sm.jpg");
 		window.open("explore.html","_self");
 		break;
 	  case "ura":
 	    localStorage.setItem("planet","ura");
+	    localStorage.setItem("planetsrc","./images/uranus_sm.jpg");
 		window.open("explore.html","_self");
 		break;
 	  case "nep":
 	    localStorage.setItem("planet","nep");
+	    localStorage.setItem("planetsrc","./images/neptune_sm.jpg");
 		window.open("explore.html","_self");
 		break;
 	  case "":
