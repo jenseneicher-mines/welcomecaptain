@@ -1,6 +1,6 @@
 // Grab shared variables across pages from localStorage
 const shipSel = localStorage.getItem("shipSel");
-const score = localStorage.getItem("score");
+var score = localStorage.getItem("score");
 const planet = localStorage.getItem("planet");
 const planetsrc = localStorage.getItem("planetsrc");
 const fact1 = localStorage.getItem("fact1");
@@ -66,35 +66,117 @@ text.style.borderRadius = "25px";
 text.style.paddingLeft = "25px";
 text.style.paddingRight = "25px";
 
-
-$('#I1').click(function() {
+var I1clicked = false;
+$('#I1').click(function () {
     text.textContent = fact1;
     text.style.top = img.style.top;
     text.style.left = img.style.left;
     text.style.position = 'absolute';
     document.body.appendChild(text);
+    //check if item was already clicked
+    if (!I1clicked) {
+        score++;
+        // sends you to win page if at 32 points
+        if (score == 32) {
+            window.open("win.html", "_self");
+        }
+        document.getElementById("score").innerText = "Score: " + score + "/32";
+        I1clicked = true;
+    }
 });
 
-$('#I2').click(function() {
+var I2clicked = false;
+$('#I2').click(function () {
     text.textContent = fact2;
     text.style.top = img2.style.top;
     text.style.left = img2.style.left;
     text.style.position = 'absolute';
     document.body.appendChild(text);
+    //check if item was already clicked
+    if (!I2clicked) {
+        score++;
+        // sends you to win page if at 32 points
+        if (score == 32) {
+            window.open("win.html", "_self");
+        }
+        document.getElementById("score").innerText = "Score: " + score + "/32";
+        I2clicked = true;
+    }
 });
 
-$('#I3').click(function() {
+var I3clicked = false;
+$('#I3').click(function () {
     text.textContent = fact3;
     text.style.top = img3.style.top;
     text.style.left = img3.style.left;
     text.style.position = 'absolute';
     document.body.appendChild(text);
+    //check if item was already clicked
+    if (!I3clicked) {
+        score++;
+        // sends you to win page if at 32 points
+        if (score == 32) {
+            window.open("win.html", "_self");
+        }
+        document.getElementById("score").innerText = "Score: " + score + "/32";
+        I3clicked = true;
+    }
 });
 
-$('#I4').click(function() {
+var I4clicked = false;
+$('#I4').click(function () {
     text.textContent = fact4;
     text.style.top = img4.style.top;
     text.style.left = img4.style.left;
     text.style.position = 'absolute';
     document.body.appendChild(text);
+    //check if item was already clicked
+    if (!I4clicked) {
+        score++;
+        // sends you to win page if at 32 points
+        if (score == 32) {
+            window.open("win.html", "_self");
+        }
+        document.getElementById("score").innerText = "Score: " + score + "/32";
+        I4clicked = true;
+    }
 });
+
+// function for goBack button, keeps score persitant
+function goBack() {
+    if (!(I1clicked && I2clicked && I3clicked && I4clicked)) {
+        alert("You must gather all four data points before moving on");
+    } else {
+        localStorage.setItem("score", score);
+        switch (localStorage.getItem("planet")) {
+            case "mer":
+                localStorage.setItem("merVisited", true);
+                break;
+            case "ven":
+                localStorage.setItem("venVisited", true);
+                break;
+            case "ear":
+                localStorage.setItem("earVisited", true);
+                break;
+            case "mar":
+                localStorage.setItem("marVisited", true);
+                break;
+            case "jup":
+                localStorage.setItem("jupVisited", true);
+                break;
+            case "sat":
+                localStorage.setItem("satVisited", true);
+                break;
+            case "ura":
+                localStorage.setItem("uraVisited", true);
+                break;
+            case "nep":
+                localStorage.setItem("nepVisited", true);
+                break;
+            case "":
+                break;
+        }
+        window.open("planets.html", "_self");
+    }
+
+}
