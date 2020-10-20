@@ -13,28 +13,38 @@ console.log(planetsrc);
 document.getElementById("score").innerText = "Score: " + score + "/32";
 document.body.style.backgroundImage = "url(" + planetsrc + ")";
 
+// random percent for placement of object from left, goes to 90 so things are not off the screen
+var leftPer = Math.floor((Math.random() * 90) + 1) + "%";
+// random percent for placement of object from top, starts from 2 to account for text at top of screen
+var topPer = Math.floor((Math.random() * 90) + 13) + "%";
 var img = document.createElement("img");
 img.id = "I1";
 img.src = "./images/magnify.png";
 console.log(img);
 img.height = 100;
 img.width = 100;
-img.style.left = '85%';
-img.style.top = '15%';
+img.style.left = leftPer;
+img.style.top = topPer;
 img.style.position = 'absolute';
 document.body.appendChild(img);
 
+// getting new random percents for placement
+leftPer = Math.floor((Math.random() * 90) + 1) + "%";
+topPer = Math.floor((Math.random() * 90) + 13) + "%";
 var img2 = document.createElement("img");
 img2.id = "I2";
 img2.src = "./images/thermometer.png";
 console.log(img2);
 img2.height = 100;
 img2.width = 100;
-img2.style.left = '90%';
-img2.style.top = '85%';
+img2.style.left = leftPer;
+img2.style.top = topPer;
 img2.style.position = 'absolute';
 document.body.appendChild(img2);
 
+// getting new random percents for placement
+leftPer = Math.floor((Math.random() * 90) + 1) + "%";
+topPer = Math.floor((Math.random() * 90) + 13) + "%";
 var img3 = document.createElement("img");
 img3.id = "I3";
 img3.src = "./images/clock.png";
@@ -42,18 +52,21 @@ console.log(img3);
 img3.height = 100;
 img3.width = 100;
 img3.style.position = 'absolute';
-img3.style.left = '50%';
-img3.style.top = '50%';
+img3.style.left = leftPer;
+img3.style.top = topPer;
 document.body.appendChild(img3);
 
+// getting new random percents for placement
+leftPer = Math.floor((Math.random() * 90) + 1) + "%";
+topPer = Math.floor((Math.random() * 90) + 13) + "%";
 var img4 = document.createElement("img");
 img4.id = "I4";
 img4.src = "./images/tape.png";
 console.log(img4);
 img4.height = 100;
 img4.width = 100;
-img4.style.left = '10%';
-img4.style.top = '45%';
+img4.style.left = leftPer;
+img4.style.top = topPer;
 img4.style.position = 'absolute';
 document.body.appendChild(img4);
 
