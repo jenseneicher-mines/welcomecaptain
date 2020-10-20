@@ -150,28 +150,28 @@ function goBack() {
         localStorage.setItem("score", score);
         switch (localStorage.getItem("planet")) {
             case "mer":
-                localStorage.setItem("merVisited", true);
+                localStorage.setItem("merVisited", "true");
                 break;
             case "ven":
-                localStorage.setItem("venVisited", true);
+                localStorage.setItem("venVisited", "true");
                 break;
             case "ear":
-                localStorage.setItem("earVisited", true);
+                localStorage.setItem("earVisited", "true");
                 break;
             case "mar":
-                localStorage.setItem("marVisited", true);
+                localStorage.setItem("marVisited", "true");
                 break;
             case "jup":
-                localStorage.setItem("jupVisited", true);
+                localStorage.setItem("jupVisited", "true");
                 break;
             case "sat":
-                localStorage.setItem("satVisited", true);
+                localStorage.setItem("satVisited", "true");
                 break;
             case "ura":
-                localStorage.setItem("uraVisited", true);
+                localStorage.setItem("uraVisited", "true");
                 break;
             case "nep":
-                localStorage.setItem("nepVisited", true);
+                localStorage.setItem("nepVisited", "true");
                 break;
             case "":
                 break;

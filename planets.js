@@ -75,7 +75,7 @@ function gotoPlanet(e) {
     if (e.keyCode == 13) {
         switch (loc) {
             case "mer":
-                if (!localStorage.getItem("merVisited")) {
+                if (!(localStorage.getItem("merVisited") == "true")) {
                     localStorage.setItem("planet", "mer");
                     localStorage.setItem("planetsrc", "./images/mercury_surface.jpg");
                     localStorage.setItem("fact1", "Interesting Fact, Mercury is the closest planet to the Sun");
@@ -89,6 +89,7 @@ function gotoPlanet(e) {
 
                 break;
             case "ven":
+                if (!(localStorage.getItem("venVisited") == "true")) {
                 localStorage.setItem("planet", "ven");
                 localStorage.setItem("planetsrc", "./images/surface_venus.jpg");
                 localStorage.setItem("fact1", "Interesting Fact, Venus is the third brightest object in the Earth's sky after the Sun and Moon");
@@ -96,8 +97,12 @@ function gotoPlanet(e) {
                 localStorage.setItem("fact3", "Year length (Earth Days to travel around the sun), 225 earth days");
                 localStorage.setItem("fact4", "Diameter, 7521 miles");
                 window.open("explore.html", "_self");
+                } else {
+                    alert("You have already visited Venus!");
+                }
                 break;
             case "ear":
+                    if (!(localStorage.getItem("earVisited") == "true")) {
                 localStorage.setItem("planet", "ear");
                 localStorage.setItem("planetsrc", "./images/earth_surface.jpg");
                 localStorage.setItem("fact1", "Interesting Fact, Earth is the densest planet in the solar system at 5,513 kg/m3");
@@ -105,8 +110,12 @@ function gotoPlanet(e) {
                 localStorage.setItem("fact3", "Year length (Earth Days to travel around the sun), 365 earth days");
                 localStorage.setItem("fact4", "Diameter, 7926 miles");
                 window.open("explore.html", "_self");
+                        } else {
+                    alert("You have already visited Earth!");
+                }
                 break;
             case "mar":
+                        if (!(localStorage.getItem("marVisited") == "true")) {
                 localStorage.setItem("planet", "mar");
                 localStorage.setItem("planetsrc", "./images/mars_surface.jpg");
                 localStorage.setItem("fact1", "Interesting Fact, Mars has the tallest mountain known in the solar system at 68,897 ft high");
@@ -114,8 +123,12 @@ function gotoPlanet(e) {
                 localStorage.setItem("fact3", "Year length (Earth Days to travel around the sun), 687 earth");
                 localStorage.setItem("fact4", "Diameter, 4212.275 miles");
                 window.open("explore.html", "_self");
+                            } else {
+                    alert("You have already visited Mars!");
+                }
                 break;
             case "jup":
+                            if (!(localStorage.getItem("jupVisited") == "true")) {
                 localStorage.setItem("planet", "jup");
                 localStorage.setItem("planetsrc", "./images/jupiter_surface.jpg");
                 localStorage.setItem("fact1", "Interesting Fact, Jupiter has the shortest day of the planets in the solar system, rotating once every 9 hours and 55 minutes");
@@ -123,8 +136,12 @@ function gotoPlanet(e) {
                 localStorage.setItem("fact3", "Year length (Earth Days to travel around the sun), 4,333 earth days");
                 localStorage.setItem("fact4", "Diameter, 88,846 miles");
                 window.open("explore.html", "_self");
+                                } else {
+                    alert("You have already visited Jupiter!");
+                }
                 break;
             case "sat":
+                                if (!(localStorage.getItem("satVisited") == "true")) {
                 localStorage.setItem("planet", "sat");
                 localStorage.setItem("planetsrc", "./images/saturn_surface.png");
                 localStorage.setItem("fact1", "Interesting Fact, Saturn has the fastest winds of any other planet in the solar system at 1,100 miles per hour");
@@ -132,8 +149,12 @@ function gotoPlanet(e) {
                 localStorage.setItem("fact3", "Year length (Earth Days to travel around the sun), 10,759 earth days");
                 localStorage.setItem("fact4", "Diameter, 74,897.6 miles");
                 window.open("explore.html", "_self");
+                                    } else {
+                    alert("You have already visited Saturn!");
+                }
                 break;
             case "ura":
+                                    if (!(localStorage.getItem("uraVisited") == "true")) {
                 localStorage.setItem("planet", "ura");
                 localStorage.setItem("planetsrc", "./images/uranus_surface.jpg");
                 localStorage.setItem("fact1", "Interesting Fact, Uranus has 13 known rings, though these rings are quite narrow so they are less visible than Saturn's ring");
@@ -141,8 +162,12 @@ function gotoPlanet(e) {
                 localStorage.setItem("fact3", "Year length (Earth Days to travel around the sun), 30,687 earth days");
                 localStorage.setItem("fact4", "Diameter, 31,518.43 miles");
                 window.open("explore.html", "_self");
+                                        } else {
+                    alert("You have already visited Uranus!");
+                }
                 break;
             case "nep":
+                                        if (!(localStorage.getItem("nepVisited") == "true")) {
                 localStorage.setItem("planet", "nep");
                 localStorage.setItem("planetsrc", "./images/neptune_surface.jpg");
                 localStorage.setItem("fact1", "Interesting Fact, Only one spacecraft has flown past Neptune, Voyager 2 in 1989");
@@ -150,6 +175,9 @@ function gotoPlanet(e) {
                 localStorage.setItem("fact3", "Year length (Earth Days to travel around the sun), 60,190 earth days");
                 localStorage.setItem("fact4", "Diameter, 30,598.8 miles");
                 window.open("explore.html", "_self");
+                                                } else {
+                    alert("You have already visited Neptune!");
+                }
                 break;
             case "":
                 break;
