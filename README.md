@@ -14,3 +14,7 @@ Some cool CSS effects we used were making the data object images that you click 
 # TODO
 # add more here for what you had difficulty with
 Things that were a bear to implement in the Javascript were making sure users could only get one point per data object, eg. they couldn't spam a data object and get all the points, they would instead have to visit every planet.
+
+Finding properly formatted and high quality pictures for the surface of planets was difficult.
+Using local storage and strings store all data for the facts seems a bit bulky and there might be a better way.
+Formatting the explore pages with the positioning of the items was tedious.
