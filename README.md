@@ -1,4 +1,4 @@
-# welcomecaptain
+# Welcome Captain
 # Joslyne Lovelace, Jensen Eicher, Lex Graham
 
 Welcome Captain is a web based Space exploration game writen in HTML, CSS and Javascript. 
@@ -11,8 +11,6 @@ When exploring the solar system, the player also needs to be aware of the astero
 
 Some cool CSS effects we used were making the data object images that you click for points only visible when you hover over them. The ship choosing page also has a cool effect of changing the border color. The button at the win screen also rotates around the y axis a couple times for some added flair.
 
-# TODO
-# add more here for what you had difficulty with
 Things that were a bear to implement in the Javascript were making sure users could only get one point per data object, eg. they couldn't spam a data object and get all the points, they would instead have to visit every planet.
 
 Finding properly formatted and high quality pictures for the surface of planets was difficult.
